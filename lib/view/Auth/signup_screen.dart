@@ -18,8 +18,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final passController = TextEditingController();
   final nameController = TextEditingController();
   final _auth = FirebaseAuth.instance;
-  FirebaseFirestore firestore =
-      FirebaseFirestore.instance.collection('doc') as dynamic;
+  CollectionReference firestore = FirebaseFirestore.instance.collection('doc');
 
   @override
   Widget build(BuildContext context) {
@@ -91,24 +90,5 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
       ),
     );
-  }
-
-  void isSignUp() {
-    _auth
-        .createUserWithEmailAndPassword(
-            email: emailController.text.toString(),
-            password: passController.text.toString())
-        .then((value) {
-      String id = DateTime.now().microsecondsSinceEpoch.toString();
-      firestore.doc(id).set({
-        'Name': nameController.text.toString(),
-        'Email': emailController.text.toString(),
-        'password': passController.text.toString()
-      }).then((value) {
-        Utility().ShowMyToast('Data Successfully saved in the data');
-      }).onError((error, stackTrace) {
-        Utility().ShowMyToast(error.toString());
-      });
-    }).onError((error, stackTrace) {});
   }
 }

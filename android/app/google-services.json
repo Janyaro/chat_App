@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "633365782640",
-    "project_id": "firbase-chatapp-93c5b",
-    "storage_bucket": "firbase-chatapp-93c5b.appspot.com"
+    "project_number": "546578599595",
+    "project_id": "chatapp-f18cd",
+    "storage_bucket": "chatapp-f18cd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:633365782640:android:c4b206a933700acf7214b5",
+        "mobilesdk_app_id": "1:546578599595:android:72e8ef2a4bba26fa7cf1ee",
         "android_client_info": {
           "package_name": "com.example.firebase_chat_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAV3yAKxPQjU4mPxvLE8-EcCgsa3QzPFSE"
+          "current_key": "AIzaSyAzszj8XnPBHPXtrTQFgLBF3OFu2pGs6yk"
         }
       ],
       "services": {

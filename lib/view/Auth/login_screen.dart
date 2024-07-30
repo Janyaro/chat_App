@@ -1,5 +1,4 @@
 import 'package:firebase_chat_app/Services/auth_services.dart';
-import 'package:firebase_chat_app/Utility/utils.dart';
 import 'package:firebase_chat_app/view/Auth/forgetpasswordScreen.dart';
 import 'package:firebase_chat_app/view/Auth/signup_screen.dart';
 import 'package:firebase_chat_app/widgets/ReUseAbleTextField.dart';
@@ -17,12 +16,10 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passController = TextEditingController();
-  final _auth = FirebaseAuth.instance;
   AuthServices services = AuthServices();
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final weight = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: Scaffold(
