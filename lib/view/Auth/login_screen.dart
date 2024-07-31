@@ -4,7 +4,6 @@ import 'package:firebase_chat_app/view/Auth/signup_screen.dart';
 import 'package:firebase_chat_app/widgets/ReUseAbleTextField.dart';
 import 'package:firebase_chat_app/widgets/Reuse_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -69,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ReUseBtn(
                   btnTitle: 'Log In',
                   ontap: () {
-                    services.isLogin(emailController.text.toString(),
+                    services.isLogin(context, emailController.text.toString(),
                         passController.text.toString());
                   },
                 ),

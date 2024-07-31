@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_chat_app/Utility/utils.dart';
+import 'package:firebase_chat_app/Services/auth_services.dart';
 import 'package:firebase_chat_app/view/Auth/login_screen.dart';
 import 'package:firebase_chat_app/widgets/ReUseAbleTextField.dart';
 import 'package:firebase_chat_app/widgets/Reuse_btn.dart';
@@ -17,9 +16,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final emailController = TextEditingController();
   final passController = TextEditingController();
   final nameController = TextEditingController();
-  final _auth = FirebaseAuth.instance;
   CollectionReference firestore = FirebaseFirestore.instance.collection('doc');
-
+  AuthServices services = AuthServices();
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -62,7 +60,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               ReUseBtn(
                 btnTitle: 'Sign Up',
-                ontap: () {},
+                ontap: () {
+                  services.isSignUp(
+                      context,
+                      emailController.text.toString(),
+                      passController.text.toString(),
+                      nameController.text.toString());
+                },
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
